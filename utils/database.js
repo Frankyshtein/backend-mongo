@@ -13,19 +13,19 @@ let db;
 const client = new MongoClient(url);
 
 exports.MongoConnect = (cb) => {
-    client.connect()
-        .then(client => {
-            console.log("Connected successfully to database");
-            db = client.db(dbName);
-            cb();
-        })
-        .catch(err => console.log('Look at error', err));
-}
+  client
+    .connect()
+    .then((client) => {
+      console.log('Connected successfully to database');
+      db = client.db(dbName);
+      cb();
+    })
+    .catch((err) => console.log('Look at error', err));
+};
 
 exports.getDb = () => {
-    if (db) {
-        return db;
-    }
-    throw 'No database found!';
-}
-
+  if (db) {
+    return db;
+  }
+  throw 'No database found!';
+};
