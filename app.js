@@ -12,7 +12,6 @@ const port = 4000;
 // turn off cors
 app.use((req, res, next) => {
   console.log(req.method, req.path);
-  console.log(req.body);
 
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', '*');
