@@ -5,6 +5,7 @@ const { MongoConnect } = require('./utils/database');
 
 const testRoutes = require('./routes/test');
 const todoRoutes = require('./routes/todo');
+const itemRoutes = require('./routes/item');
 
 const app = express();
 const port = 4000;
@@ -26,6 +27,7 @@ app.use(bodyParser.json());
 
 app.use(testRoutes);
 app.use(todoRoutes);
+app.use(itemRoutes);
 
 MongoConnect(() => {
   app.listen(port, () => {
